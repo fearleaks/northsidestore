@@ -127,7 +127,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: url('https://i.imgur.com/dxjd7FB.jpeg') center/cover no-repeat;
+    background: #1c1c1c; /* clean dark background */
   }
   .phone-app {
     width: 60px;
@@ -175,7 +175,7 @@
   <div class="phone-header">Phantom Phone</div>
   <div class="phone-screen">
     <div class="phone-app" onclick="window.open('https://discord.gg/phantomleaks','_blank')">
-      <img src="https://cdn.discordapp.com/icons/222078108977594368/a_6e7c2bba7a6a38d9f1a21c.png?size=64" alt="Discord">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord">
     </div>
   </div>
 </div>
@@ -209,15 +209,15 @@
 </footer>
 
 <!-- GTA Phone Sound -->
-<audio id="phoneSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1c89f3e621.mp3?filename=phone-opening-14705.mp3"></audio>
+<audio id="phoneSound" src="https://cdn.pixabay.com/download/audio/2021/09/16/audio_854bf0c49c.mp3?filename=notification-4-126509.mp3"></audio>
 
 <script>
 function togglePhone() {
   const phone = document.getElementById("phantomPhone");
   const sound = document.getElementById("phoneSound");
   phone.classList.toggle("active");
-  sound.currentTime = 0; // restart sound each time
-  sound.play();
+  sound.currentTime = 0;
+  sound.play().catch(err => console.log("Sound blocked:", err));
 }
 </script>
 
