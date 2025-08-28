@@ -127,7 +127,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: url('https://i.imgur.com/1N6uKqj.png') center/cover no-repeat;
+    background: url('https://i.imgur.com/dxjd7FB.jpeg') center/cover no-repeat;
   }
   .phone-app {
     width: 60px;
@@ -175,7 +175,7 @@
   <div class="phone-header">Phantom Phone</div>
   <div class="phone-screen">
     <div class="phone-app" onclick="window.open('https://discord.gg/phantomleaks','_blank')">
-      <img src="https://cdn.worldvectorlogo.com/logos/discord-6.svg" alt="Discord">
+      <img src="https://cdn.discordapp.com/icons/222078108977594368/a_6e7c2bba7a6a38d9f1a21c.png?size=64" alt="Discord">
     </div>
   </div>
 </div>
@@ -209,13 +209,14 @@
 </footer>
 
 <!-- GTA Phone Sound -->
-<audio id="phoneSound" src="https://www.myinstants.com/media/sounds/gta-v-phone.mp3"></audio>
+<audio id="phoneSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1c89f3e621.mp3?filename=phone-opening-14705.mp3"></audio>
 
 <script>
 function togglePhone() {
   const phone = document.getElementById("phantomPhone");
   const sound = document.getElementById("phoneSound");
   phone.classList.toggle("active");
+  sound.currentTime = 0; // restart sound each time
   sound.play();
 }
 </script>
