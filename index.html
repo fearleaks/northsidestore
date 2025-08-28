@@ -11,6 +11,7 @@
     background: #0f0f0f;
     color: #fff;
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   header {
@@ -79,6 +80,71 @@
   }
   .card button:hover { background: #5500aa; }
 
+  /* Phone Button */
+  .phone-btn {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: #8000ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #8000ffaa;
+    transition: background 0.3s ease;
+  }
+  .phone-btn:hover { background: #5500aa; }
+
+  /* Phone UI */
+  .phone {
+    position: fixed;
+    bottom: -120%;
+    right: 20px;
+    width: 280px;
+    height: 500px;
+    background: #111;
+    border: 3px solid #444;
+    border-radius: 30px;
+    box-shadow: 0 0 30px #8000ffaa;
+    transition: bottom 0.8s ease;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  .phone.active {
+    bottom: 20px;
+  }
+  .phone-header {
+    background: #222;
+    text-align: center;
+    padding: 10px;
+    color: #8000ff;
+    font-weight: bold;
+  }
+  .phone-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: url('https://i.imgur.com/1N6uKqj.png') center/cover no-repeat;
+  }
+  .phone-app {
+    width: 60px;
+    height: 60px;
+    background: #5865F2;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px #5865F2aa;
+  }
+  .phone-app img {
+    width: 35px;
+    height: 35px;
+  }
+
   footer {
     text-align: center;
     padding: 30px 20px;
@@ -98,8 +164,21 @@
 <header>
   <h1>Phantom Leaks Promotions 💜</h1>
   <p>Boost your experience with our perks and exclusive features!</p>
-  <img class="promo-gif" src="https://i.imgur.com/rbogWq6.gif&" alt="Promo GIF">
+  <img class="promo-gif" src="https://i.imgur.com/rbogWq6.gif" alt="Promo GIF">
 </header>
+
+<!-- Pull Out Phone Button -->
+<button class="phone-btn" onclick="togglePhone()">📱 Pull Out Phantom Phone</button>
+
+<!-- Phone UI -->
+<div class="phone" id="phantomPhone">
+  <div class="phone-header">Phantom Phone</div>
+  <div class="phone-screen">
+    <div class="phone-app" onclick="window.open('https://discord.gg/phantomleaks','_blank')">
+      <img src="https://cdn.worldvectorlogo.com/logos/discord-6.svg" alt="Discord">
+    </div>
+  </div>
+</div>
 
 <section>
   <div class="card">
@@ -128,6 +207,18 @@
   &copy; 2025 Phantom Leaks — Join our Discord for updates:
   <a href="https://discord.gg/h2FJYZ8R4D" target="_blank" rel="noopener noreferrer">discord.gg/h2FJYZ8R4D</a>
 </footer>
+
+<!-- GTA Phone Sound -->
+<audio id="phoneSound" src="https://www.myinstants.com/media/sounds/gta-v-phone.mp3"></audio>
+
+<script>
+function togglePhone() {
+  const phone = document.getElementById("phantomPhone");
+  const sound = document.getElementById("phoneSound");
+  phone.classList.toggle("active");
+  sound.play();
+}
+</script>
 
 </body>
 </html>
